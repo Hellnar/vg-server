@@ -2,6 +2,7 @@ import { supabase } from "../server.js"
 import { io } from "../server.js"
 import { processingSimulateApi } from "../utils/projects/processingSimulateApi.js"
 import { updateLeads } from "../utils/projects/updateLeads.js"
+import { processingRapidScraping } from "../utils/projects/processingRapidScraping.js"
 
 export async function processingProject(req, res) {
     try {
