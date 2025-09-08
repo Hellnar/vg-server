@@ -25,9 +25,11 @@ export const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPAB
 
 import mainRoutes from "./routes/main.js"
 import projectsRoutes from "./routes/projects.js"
+import statsRoutes from "./routes/stats.js"
 
 app.use("/api/", mainRoutes)
 app.use("/api/projects", projectsRoutes)
+app.use("/api/stats", statsRoutes)
 
 server.listen(3000, () => {
   console.log("Server is running on port 3000")

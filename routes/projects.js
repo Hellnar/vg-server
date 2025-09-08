@@ -17,5 +17,6 @@ projectsRouter.delete("/:id", (req, res) => deleteProject(req, res))
 projectsRouter.get("/:id/leads", async (req, res) => getLeads(req, res))
 projectsRouter.get("/:id/download", async (req, res) => downloadProject(req, res))
 projectsRouter.post("/:id/processing", async (req, res) => processingProject(req, res))
+projectsRouter.put("/:id", async (req, res) => console.log(req.body))
 
 export default projectsRouter
