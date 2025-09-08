@@ -23,11 +23,11 @@ app.use(cors())
 
 export const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
 
-import mainRoutes from "./routes/main.js"
+import pingRoutes from "./routes/ping.js"
 import projectsRoutes from "./routes/projects.js"
 import statsRoutes from "./routes/stats.js"
 
-app.use("/api/", mainRoutes)
+app.use("/api/ping", pingRoutes)
 app.use("/api/projects", projectsRoutes)
 app.use("/api/stats", statsRoutes)
 
