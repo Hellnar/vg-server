@@ -4,9 +4,23 @@ import dotenv from 'dotenv'
 import { createClient } from '@supabase/supabase-js'
 import { Server } from "socket.io"
 import { createServer } from "http"
+import fs from "fs";
+import path from "path";
 
 dotenv.config()
 const app = express()
+
+const dirs = [
+  path.join(process.cwd(), "tmp"),
+  path.join(process.cwd(), "tmp", "uploads"),
+]
+
+dirs.forEach(dir => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+})
+
 const server = createServer(app)
 export const io = new Server(server, {
     cors: {
