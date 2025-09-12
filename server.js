@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
     console.log("A user connected: ", socket.id)
 })
 
+app.use(express.json())
 app.use(cors())
 
 export const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
